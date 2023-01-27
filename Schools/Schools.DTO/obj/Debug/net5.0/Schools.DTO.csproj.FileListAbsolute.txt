@@ -1,0 +1,12 @@
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.DTO.deps.json
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.DTO.dll
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\ref\Schools.DTO.dll
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.DTO.pdb
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.csproj.AssemblyReference.cache
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.GeneratedMSBuildEditorConfig.editorconfig
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.AssemblyInfoInputs.cache
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.AssemblyInfo.cs
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.csproj.CoreCompileInputs.cache
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.dll
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\ref\Schools.DTO.dll
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.pdb

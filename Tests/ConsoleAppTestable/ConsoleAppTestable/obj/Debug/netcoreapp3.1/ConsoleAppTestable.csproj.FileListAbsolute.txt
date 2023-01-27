@@ -1,0 +1,14 @@
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\bin\Debug\netcoreapp3.1\ConsoleAppTestable.exe
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\bin\Debug\netcoreapp3.1\ConsoleAppTestable.deps.json
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\bin\Debug\netcoreapp3.1\ConsoleAppTestable.runtimeconfig.json
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\bin\Debug\netcoreapp3.1\ConsoleAppTestable.runtimeconfig.dev.json
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\bin\Debug\netcoreapp3.1\ConsoleAppTestable.dll
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\bin\Debug\netcoreapp3.1\ConsoleAppTestable.pdb
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.csproj.AssemblyReference.cache
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.GeneratedMSBuildEditorConfig.editorconfig
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.AssemblyInfoInputs.cache
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.AssemblyInfo.cs
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.csproj.CoreCompileInputs.cache
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.dll
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.pdb
+F:\FinalProject\Tests\ConsoleAppTestable\ConsoleAppTestable\obj\Debug\netcoreapp3.1\ConsoleAppTestable.genruntimeconfig.cache

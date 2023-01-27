@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Schools.DataBase\Schools.DataBase.csproj" />
+    <ProjectReference Include="..\Schools.DataStorage\Schools.DataStorage.csproj" />
+  </ItemGroup>
+
+</Project>

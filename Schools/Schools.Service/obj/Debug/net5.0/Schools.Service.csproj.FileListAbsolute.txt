@@ -1,0 +1,12 @@
+F:\FinalProject\Schools\Schools.Service\bin\Debug\net5.0\Schools.Service.deps.json
+F:\FinalProject\Schools\Schools.Service\bin\Debug\net5.0\Schools.Service.dll
+F:\FinalProject\Schools\Schools.Service\bin\Debug\net5.0\ref\Schools.Service.dll
+F:\FinalProject\Schools\Schools.Service\bin\Debug\net5.0\Schools.Service.pdb
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.csproj.AssemblyReference.cache
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.AssemblyInfoInputs.cache
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.AssemblyInfo.cs
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.csproj.CoreCompileInputs.cache
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.dll
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\ref\Schools.Service.dll
+F:\FinalProject\Schools\Schools.Service\obj\Debug\net5.0\Schools.Service.pdb

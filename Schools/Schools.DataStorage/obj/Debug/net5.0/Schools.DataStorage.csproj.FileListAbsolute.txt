@@ -1,0 +1,15 @@
+F:\FinalProject\Schools\Schools.DataStorage\bin\Debug\net5.0\Schools.DataStorage.deps.json
+F:\FinalProject\Schools\Schools.DataStorage\bin\Debug\net5.0\Schools.DataStorage.dll
+F:\FinalProject\Schools\Schools.DataStorage\bin\Debug\net5.0\ref\Schools.DataStorage.dll
+F:\FinalProject\Schools\Schools.DataStorage\bin\Debug\net5.0\Schools.DataStorage.pdb
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.csproj.AssemblyReference.cache
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.GeneratedMSBuildEditorConfig.editorconfig
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.AssemblyInfoInputs.cache
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.AssemblyInfo.cs
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.csproj.CoreCompileInputs.cache
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.dll
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\ref\Schools.DataStorage.dll
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.pdb
+F:\FinalProject\Schools\Schools.DataStorage\bin\Debug\net5.0\Schools.Service.dll
+F:\FinalProject\Schools\Schools.DataStorage\bin\Debug\net5.0\Schools.Service.pdb
+F:\FinalProject\Schools\Schools.DataStorage\obj\Debug\net5.0\Schools.DataStorage.csproj.CopyComplete
