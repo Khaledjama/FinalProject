@@ -12,9 +12,10 @@ namespace Schools.DAL.Reprositries.NonGenaricReprositry
 {
     public class TestReprositry : GenaricReprositry<Test>, ITestReprositry
     {
+        private readonly SchoolsDB DB;
         public TestReprositry(SchoolsDB Db) : base(Db)
         {
-
+            this.DB = Db;
         }
         public IEnumerable<Test> SpecialMethod()
         {

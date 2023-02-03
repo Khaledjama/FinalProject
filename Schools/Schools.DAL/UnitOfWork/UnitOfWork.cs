@@ -34,6 +34,24 @@ namespace Schools.DAL.UnitOfWork
 
         public IGenaricReprositry<Parent> Parent { get; private set; }
 
+        public IGenaricReprositry<Studentabsence> StudentAbsence { get; private set; }
+
+        public IGenaricReprositry<Teacherabsence> TeacherAbsence { get; private set; }
+
+        public IGenaricReprositry<Department> Department { get; private set; }
+
+        public IGenaricReprositry<Employee> Employee { get; private set; }
+
+        public IGenaricReprositry<Exam> Exam { get; private set; }
+
+        public IGenaricReprositry<ExamType> ExamType { get; private set; }
+
+        public IGenaricReprositry<ExamAnswer> ExamAnswer { get; private set; }
+
+        public IGenaricReprositry<ExamResult> ExamResult { get; private set; }
+
+        public IExamResultReprositry ExamResultRepo { get; private set; }
+
 
         //public IGenaricReprositry<StudentAdress> StudentAdresses { get; private set; }
 
@@ -54,9 +72,18 @@ namespace Schools.DAL.UnitOfWork
             Student = new GenaricReprositry<Student>(_Context);
             StudentAdress = new GenaricReprositry<StudentAdress>(_Context);
             StudentSubject = new GenaricReprositry<StudentsSubjects>(_Context);
+            StudentAbsence = new GenaricReprositry<Studentabsence>(_Context);
+            TeacherAbsence = new GenaricReprositry<Teacherabsence>(_Context);
+            Department = new GenaricReprositry<Department>(_Context);
+            Employee = new GenaricReprositry<Employee>(_Context);
+            Exam = new GenaricReprositry<Exam>(_Context);
+            ExamType = new GenaricReprositry<ExamType>(_Context);
+            ExamAnswer = new GenaricReprositry<ExamAnswer>(_Context);
+            ExamResult = new GenaricReprositry<ExamResult>(_Context);
             //Exams = new GenaricReprositry<Exam>(_Context);
             TestRepo = new TestReprositry(_Context);
             UserRepo = new UserReprositry(_Context);
+            ExamResultRepo = new ExamResultReprositry(_Context);
         }
 
         public int Complete()

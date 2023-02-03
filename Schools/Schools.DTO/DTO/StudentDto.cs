@@ -30,5 +30,8 @@ namespace Schools.DTO.DTO
         public IFormFile Picture { get; set; }
         public string Image { get; set; }
 
+        public int SchoolsYearId { get; set; }
+        public int ClassRoomId { get; set; }
+
     }
 }

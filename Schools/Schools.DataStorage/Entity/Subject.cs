@@ -20,5 +20,7 @@ namespace Schools.DataStorage.Entity
         // RelationShip between Subject And Students
 
         public virtual ICollection<StudentsSubjects> StudentsSubjects { get; set; }
+        public virtual ICollection<ExamResult> ExamResult { get; set; }
+
     }
 }

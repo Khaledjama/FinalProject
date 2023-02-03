@@ -84,6 +84,42 @@ namespace Schools.DataBase.Context
             builder.Entity<Parent>()
                 .HasOne<ApplicationUser>(s => s.ApplicationUser)
                 .WithOne(s => s.Parent).HasForeignKey<Parent>(s => s.User_Id);
+
+            // RelationSipt between Student and studentAbsense
+            builder.Entity<Studentabsence>()
+                .HasOne<Student>(s => s.Student)
+                .WithMany(s => s.Studentabsences).HasForeignKey(s => s.StudentSSN);
+
+            // RelationSipt between Teacher and studentAbsense
+            builder.Entity<Teacherabsence>()
+                .HasOne<Teacher>(s => s.Teacher)
+                .WithMany(s => s.Teacherabsences).HasForeignKey(s => s.TeacherSSN);
+            // RelationSipt between Employee and Department
+            builder.Entity<Employee>()
+                .HasOne<Department>(s => s.Department)
+                .WithMany(s => s.Employees).HasForeignKey(s => s.DepartmentId);
+
+            // RelationSipt between Student and SchoolsYear
+            builder.Entity<Student>()
+                .HasOne<SchoolYears>(s => s.SchoolYears)
+                .WithMany(s => s.Students).HasForeignKey(s => s.SchoolsYearId);
+            // RelationSipt between Student and SchoolsYear
+            builder.Entity<Student>()
+                .HasOne<ClassRoom>(s => s.ClassRoom)
+                .WithMany(s => s.Students).HasForeignKey(s => s.ClassRoomId);
+            // RelationSipt between ExamResult and Student
+            builder.Entity<ExamResult>()
+                .HasOne<Student>(s => s.Student)
+                .WithMany(s => s.ExamResult).HasForeignKey(s => s.StudentSSN);
+
+            //// RelationSipt between Exam and SchoolsYear
+            //builder.Entity<Exam>()
+            //    .HasOne<SchoolYears>(s => s.SchoolYears)
+            //    .WithMany(s => s.Exams).HasForeignKey(s => s.SchoolYearsId);
+
+            // ExamResults
+            builder.Entity<ExamResult>()
+                .HasKey(s => new { s.StudentSSN, s.SubjectId, s.ExamId });
             // ------------------- End ----------------------
             base.OnModelCreating(builder);
 
@@ -95,5 +131,16 @@ namespace Schools.DataBase.Context
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<StudentsSubjects> StudentsSubjects { get; set; }
         public DbSet<Student> Students { get; set; }
+        // V1.1
+        public DbSet<Studentabsence> Studentabsence { get; set; }
+        public DbSet<ClassRoom> classRooms { get; set; }
+        public DbSet<SchoolYears> SchoolYears { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Exam> Exam { get; set; }
+        public DbSet<ExamType> ExamType { get; set; }
+        public DbSet<ExamResult> ExamResult { get; set; }
+        public DbSet<ExamAnswer> ExamAnswer { get; set; }
+
     }
 }

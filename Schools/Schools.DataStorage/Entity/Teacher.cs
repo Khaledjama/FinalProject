@@ -23,5 +23,8 @@ namespace Schools.DataStorage.Entity
         public string User_Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        public virtual ICollection<Teacherabsence> Teacherabsences { get; set; }
+
+
     }
 }

@@ -31,6 +31,19 @@ namespace Schools.DataStorage.Entity
         public virtual Parent Parent { get; set; }
 
 
+        // Relationship between Student And StudentAbsense
+        public virtual ICollection<Studentabsence> Studentabsences { get; set; }
+
+        // Relationship between Student And SchoolYears
+        public int SchoolsYearId { get; set; }
+        public virtual SchoolYears SchoolYears { get; set; }
+        // Relationship between Student And ClassRoom
+        public int ClassRoomId { get; set; }
+        public virtual ClassRoom ClassRoom { get; set; }
+
+        public virtual ICollection<ExamResult> ExamResult { get; set; }
+
+
 
     }
 }

@@ -23,6 +23,17 @@ namespace Schools.DAL.UnitOfWork
         //IStudentReprositry StudentRepo { get; }
         ITestReprositry TestRepo { get; }
         IUserReprositry UserRepo { get; }
+        IExamResultReprositry ExamResultRepo { get; }
+        IGenaricReprositry<Studentabsence> StudentAbsence { get; }
+        IGenaricReprositry<Teacherabsence> TeacherAbsence { get; }
+        IGenaricReprositry<Department> Department { get; }
+        IGenaricReprositry<Employee> Employee { get; }
+
+        IGenaricReprositry<Exam> Exam { get; }
+        IGenaricReprositry<ExamType> ExamType { get; }
+        IGenaricReprositry<ExamAnswer> ExamAnswer { get; }
+        IGenaricReprositry<ExamResult> ExamResult { get; }
+
         int Complete();
         Task<int> CompleteAsync();
     }

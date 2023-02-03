@@ -218,6 +218,171 @@ namespace Schools.DataBase.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.ClassRoom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("ClassRoomNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("classRooms");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Department", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("DepartmentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Employee", b =>
+                {
+                    b.Property<long>("EmployeeSSN")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DB")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MiddleName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeSSN");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Exam", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ExamAnswerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ExamLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamPdf")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExamTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("FinalDegree")
+                        .HasColumnType("float");
+
+                    b.Property<int>("SchoolYearsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamAnswerId");
+
+                    b.HasIndex("ExamTypeId");
+
+                    b.HasIndex("SchoolYearsId");
+
+                    b.ToTable("Exam");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.ExamAnswer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("ExamAnswerType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExamAnswer");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.ExamResult", b =>
+                {
+                    b.Property<long>("StudentSSN")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("SubjectId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("ExamDegree")
+                        .HasColumnType("float");
+
+                    b.HasKey("StudentSSN", "SubjectId", "ExamId");
+
+                    b.HasIndex("ExamId");
+
+                    b.HasIndex("SubjectId");
+
+                    b.ToTable("ExamResult");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.ExamType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExamType");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.Parent", b =>
                 {
                     b.Property<long>("ParentSSN")
@@ -253,10 +418,28 @@ namespace Schools.DataBase.Migrations
                     b.ToTable("parents");
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.SchoolYears", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("SchoolYear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SchoolYears");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.Student", b =>
                 {
                     b.Property<long>("StudenntSSN")
                         .HasColumnType("bigint");
+
+                    b.Property<int>("ClassRoomId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DB")
                         .HasColumnType("datetime2");
@@ -279,12 +462,19 @@ namespace Schools.DataBase.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SchoolsYearId")
+                        .HasColumnType("int");
+
                     b.Property<string>("User_Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("StudenntSSN");
 
+                    b.HasIndex("ClassRoomId");
+
                     b.HasIndex("ParentId");
+
+                    b.HasIndex("SchoolsYearId");
 
                     b.HasIndex("User_Id")
                         .IsUnique()
@@ -313,6 +503,26 @@ namespace Schools.DataBase.Migrations
                     b.HasKey("StudentSSN");
 
                     b.ToTable("StudentAdress");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Studentabsence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("StudentSSN")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentSSN");
+
+                    b.ToTable("Studentabsence");
                 });
 
             modelBuilder.Entity("Schools.DataStorage.Entity.StudentsSubjects", b =>
@@ -411,6 +621,26 @@ namespace Schools.DataBase.Migrations
                     b.ToTable("TeacherAdresses");
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.Teacherabsence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("TeacherSSN")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeacherSSN");
+
+                    b.ToTable("Teacherabsence");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.Test", b =>
                 {
                     b.Property<int>("Id")
@@ -477,6 +707,71 @@ namespace Schools.DataBase.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.Employee", b =>
+                {
+                    b.HasOne("Schools.DataStorage.Entity.Department", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Exam", b =>
+                {
+                    b.HasOne("Schools.DataStorage.Entity.ExamAnswer", "ExamAnswer")
+                        .WithMany("Exam")
+                        .HasForeignKey("ExamAnswerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Schools.DataStorage.Entity.ExamType", "ExamType")
+                        .WithMany("Exam")
+                        .HasForeignKey("ExamTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Schools.DataStorage.Entity.SchoolYears", "SchoolYears")
+                        .WithMany("Exams")
+                        .HasForeignKey("SchoolYearsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExamAnswer");
+
+                    b.Navigation("ExamType");
+
+                    b.Navigation("SchoolYears");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.ExamResult", b =>
+                {
+                    b.HasOne("Schools.DataStorage.Entity.Exam", "Exam")
+                        .WithMany("ExamResult")
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Schools.DataStorage.Entity.Student", "Student")
+                        .WithMany("ExamResult")
+                        .HasForeignKey("StudentSSN")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Schools.DataStorage.Entity.Subject", "Subject")
+                        .WithMany("ExamResult")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Exam");
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.Parent", b =>
                 {
                     b.HasOne("Schools.DataStorage.Entity.ApplicationUser", "ApplicationUser")
@@ -488,9 +783,21 @@ namespace Schools.DataBase.Migrations
 
             modelBuilder.Entity("Schools.DataStorage.Entity.Student", b =>
                 {
+                    b.HasOne("Schools.DataStorage.Entity.ClassRoom", "ClassRoom")
+                        .WithMany("Students")
+                        .HasForeignKey("ClassRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Schools.DataStorage.Entity.Parent", "Parent")
                         .WithMany("Students")
                         .HasForeignKey("ParentId");
+
+                    b.HasOne("Schools.DataStorage.Entity.SchoolYears", "SchoolYears")
+                        .WithMany("Students")
+                        .HasForeignKey("SchoolsYearId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Schools.DataStorage.Entity.ApplicationUser", "ApplicationUser")
                         .WithOne("Student")
@@ -498,7 +805,11 @@ namespace Schools.DataBase.Migrations
 
                     b.Navigation("ApplicationUser");
 
+                    b.Navigation("ClassRoom");
+
                     b.Navigation("Parent");
+
+                    b.Navigation("SchoolYears");
                 });
 
             modelBuilder.Entity("Schools.DataStorage.Entity.StudentAdress", b =>
@@ -506,6 +817,17 @@ namespace Schools.DataBase.Migrations
                     b.HasOne("Schools.DataStorage.Entity.Student", "Student")
                         .WithOne("StudentAdress")
                         .HasForeignKey("Schools.DataStorage.Entity.StudentAdress", "StudentSSN")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Studentabsence", b =>
+                {
+                    b.HasOne("Schools.DataStorage.Entity.Student", "Student")
+                        .WithMany("Studentabsences")
+                        .HasForeignKey("StudentSSN")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -562,6 +884,17 @@ namespace Schools.DataBase.Migrations
                     b.Navigation("Teacher");
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.Teacherabsence", b =>
+                {
+                    b.HasOne("Schools.DataStorage.Entity.Teacher", "Teacher")
+                        .WithMany("Teacherabsences")
+                        .HasForeignKey("TeacherSSN")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Teacher");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.ApplicationUser", b =>
                 {
                     b.Navigation("Parent");
@@ -571,13 +904,49 @@ namespace Schools.DataBase.Migrations
                     b.Navigation("Teacher");
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.ClassRoom", b =>
+                {
+                    b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Department", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.Exam", b =>
+                {
+                    b.Navigation("ExamResult");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.ExamAnswer", b =>
+                {
+                    b.Navigation("Exam");
+                });
+
+            modelBuilder.Entity("Schools.DataStorage.Entity.ExamType", b =>
+                {
+                    b.Navigation("Exam");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.Parent", b =>
                 {
                     b.Navigation("Students");
                 });
 
+            modelBuilder.Entity("Schools.DataStorage.Entity.SchoolYears", b =>
+                {
+                    b.Navigation("Exams");
+
+                    b.Navigation("Students");
+                });
+
             modelBuilder.Entity("Schools.DataStorage.Entity.Student", b =>
                 {
+                    b.Navigation("ExamResult");
+
+                    b.Navigation("Studentabsences");
+
                     b.Navigation("StudentAdress");
 
                     b.Navigation("StudentsSubjects");
@@ -585,12 +954,16 @@ namespace Schools.DataBase.Migrations
 
             modelBuilder.Entity("Schools.DataStorage.Entity.Subject", b =>
                 {
+                    b.Navigation("ExamResult");
+
                     b.Navigation("StudentsSubjects");
                 });
 
             modelBuilder.Entity("Schools.DataStorage.Entity.Teacher", b =>
                 {
                     b.Navigation("Subject");
+
+                    b.Navigation("Teacherabsences");
 
                     b.Navigation("TeacherAdress");
                 });

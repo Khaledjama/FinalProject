@@ -34,6 +34,24 @@ namespace Schools.AutoMapper.ProfileMapping
             CreateMap<StudentsSubjects, StudentSubjectDTO>();
             CreateMap<StudentSubjectDTO, StudentsSubjects>();
 
+            CreateMap<Studentabsence, StudentAbsenceDto>();
+            CreateMap<StudentAbsenceDto, Studentabsence>();
+
+            CreateMap<Teacherabsence, TeacherAbsenceDto>();
+            CreateMap<TeacherAbsenceDto, Teacherabsence>();
+
+            CreateMap<Exam, ExamDto>();
+            CreateMap<ExamDto, Exam>();
+
+            CreateMap<ExamType, ExamTypeDto>();
+            CreateMap<ExamTypeDto, ExamType>();
+
+            CreateMap<ExamAnswer, ExamAnswerDto>();
+            CreateMap<ExamAnswerDto, ExamAnswer>();
+
+            CreateMap<ExamResult, ExamResultDto>();
+            CreateMap<ExamResultDto, ExamResult>();
+
         }
     }
 }

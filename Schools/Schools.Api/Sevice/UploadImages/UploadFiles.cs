@@ -20,5 +20,19 @@ namespace Schools.Api.Sevice.UploadImages
             }
             return PhotoName;
         }
+        public static string? UploadExamAsPdf(IFormFile File)
+        {
+            var ExamPath = Directory.GetCurrentDirectory() + "/Exams";
+            string ExamName = Guid.NewGuid() + Path.GetFileName(File.FileName);
+            string Extention = Path.GetExtension(File.FileName);
+            if (Extention.ToLower() != ".pdf")
+                return string.Empty;
+            string FinallPath = Path.Combine(ExamPath, ExamName);
+            using (var stream = new FileStream(FinallPath, FileMode.Create))
+            {
+                File.CopyTo(stream);
+            }
+            return ExamName;
+        }
     }
 }
