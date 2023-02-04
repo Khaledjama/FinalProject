@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Schools.DataStorage.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Schools.DTO.DTO
@@ -32,6 +34,38 @@ namespace Schools.DTO.DTO
 
         public int SchoolsYearId { get; set; }
         public int ClassRoomId { get; set; }
+
+
+
+        // RelationShip between Teacher And Subject
+        [JsonIgnore]
+        public virtual StudentAdressDto StudentAdress { get; set; }
+
+        // RelationShip between Teacher And ApplicationUser
+        [JsonIgnore]
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
+        // RelationShip between Student And Subjects
+        [JsonIgnore]
+        public virtual ICollection<StudentsSubjectsDto> StudentsSubjects { get; set; }
+
+        // RelationShip between Student And Parents
+        [JsonIgnore]
+        public virtual ParentDto Parent { get; set; }
+
+
+        // Relationship between Student And StudentAbsense
+        [JsonIgnore]
+        public virtual ICollection<StudentAbsenceDto> Studentabsences { get; set; }
+
+        // Relationship between Student And SchoolYears
+        [JsonIgnore]
+        public virtual SchoolYearsDto SchoolYears { get; set; }
+        // Relationship between Student And ClassRoom
+        [JsonIgnore]
+        public virtual ClassRoomDto ClassRoom { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<ExamResultDto> ExamResult { get; set; }
 
     }
 }

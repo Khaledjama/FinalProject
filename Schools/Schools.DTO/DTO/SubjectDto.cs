@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Schools.DTO.DTO
@@ -21,5 +22,13 @@ namespace Schools.DTO.DTO
 
         [Required(ErrorMessage = "Please Added Thid Subject to Any Teacher")]
         public long TeacherId { get; set; }
+        [JsonIgnore]
+        public virtual TeacherDto Teacher { get; set; }
+
+        // RelationShip between Subject And Students
+        [JsonIgnore]
+        public virtual ICollection<StudentsSubjectsDto> StudentsSubjects { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<ExamResultDto> ExamResult { get; set; }
     }
 }

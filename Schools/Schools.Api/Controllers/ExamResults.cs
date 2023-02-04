@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Schools.DAL.UnitOfWork;
 using Schools.DataStorage.Entity;
@@ -19,10 +20,14 @@ namespace Schools.Api.Controllers
         // GET: api/<Exams>
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _Map;
-        public ExamResults(IUnitOfWork unit, IMapper map)
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signManager;
+        public ExamResults(IUnitOfWork unit, IMapper map ,UserManager<ApplicationUser> User , SignInManager<ApplicationUser> Sign)
         {
             this._unitOfWork = unit;
             this._Map = map;
+            this._userManager = User;
+            this._signManager = Sign;
         }
         // GET api/<ExamResults>/5
         [HttpGet]
@@ -79,14 +84,22 @@ namespace Schools.Api.Controllers
                 return BadRequest("Error When Delete Exam Result");
             return Ok("Deleted Exam Result Successfully");
         }
-        //[HttpGet]
-        //public IActionResult GetResultForStudent(int )
-        //{
-        //    var CurrentStudentUserId= 
-        //    if (!_unitOfWork.ExamResultRepo.DeleteExamResult(StudentSSN, SubjectId, ExamId))
-        //        return BadRequest("Error When Delete Exam Result");
-        //    return Ok("Deleted Exam Result Successfully");
-        //}
+        [HttpGet("{ExamTypeId:int}")]
+        public IActionResult GetResultForStudent(int ExamTypeId)
+        {
+            var CurrentStudentUserId = _userManager.GetUserId(User);
+            var CurrentStudent = _unitOfWork.Student.GetAll().ToList().Where((s) => s.User_Id == CurrentStudentUserId).FirstOrDefault();
+            if (CurrentStudent is null)
+                return BadRequest("Error For Get Result For This Student");
+            var CurrentStudentSSN = CurrentStudent.StudenntSSN;
+            var Results = _unitOfWork.ExamResult.GetAll().Where(s => s.StudentSSN == CurrentStudentSSN
+                                                               && s.Exam.ExamType.Id == ExamTypeId).ToList();
+            if (Results is null)
+                return BadRequest("Error For Get Result For This Student");
+            var Data = _Map.Map<IEnumerable<ExamResult>,IEnumerable<ExamResultDto>>(Results);
+            return Ok(Data);
+        }
+
 
     }
 }

@@ -52,6 +52,10 @@ namespace Schools.DAL.UnitOfWork
 
         public IExamResultReprositry ExamResultRepo { get; private set; }
 
+        public IGenaricReprositry<SchoolYears> SchoolsYears { get; private set; }
+
+        public IGenaricReprositry<ClassRoom> ClassRoom { get; private set; }
+
 
         //public IGenaricReprositry<StudentAdress> StudentAdresses { get; private set; }
 
@@ -80,6 +84,8 @@ namespace Schools.DAL.UnitOfWork
             ExamType = new GenaricReprositry<ExamType>(_Context);
             ExamAnswer = new GenaricReprositry<ExamAnswer>(_Context);
             ExamResult = new GenaricReprositry<ExamResult>(_Context);
+            ClassRoom = new GenaricReprositry<ClassRoom>(_Context);
+            SchoolsYears = new GenaricReprositry<SchoolYears>(_Context);
             //Exams = new GenaricReprositry<Exam>(_Context);
             TestRepo = new TestReprositry(_Context);
             UserRepo = new UserReprositry(_Context);

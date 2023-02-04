@@ -35,7 +35,10 @@ namespace Schools.Api
             services.AddDbContext<SchoolsDB>
                 (item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));  
             
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddAutoMapper(typeof(ProfileMapping));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -51,6 +54,8 @@ namespace Schools.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Schools.Api", Version = "v1" });
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

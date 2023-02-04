@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Schools.DataStorage.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Schools.DTO.DTO
@@ -25,5 +27,12 @@ namespace Schools.DTO.DTO
         public string Phone { get; set; }
         public IFormFile Picture { get; set; }
         public string Image { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<StudentDto> Students { get; set; }
+
+
+        // RelationShip between Parent And ApplicationUser
+        [JsonIgnore]
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

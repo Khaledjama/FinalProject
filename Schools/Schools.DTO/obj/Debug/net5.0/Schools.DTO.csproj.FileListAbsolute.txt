@@ -10,3 +10,8 @@ F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.csproj.CoreComp
 F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.dll
 F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\ref\Schools.DTO.dll
 F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.pdb
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.DataStorage.dll
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.Service.dll
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.DataStorage.pdb
+F:\FinalProject\Schools\Schools.DTO\bin\Debug\net5.0\Schools.Service.pdb
+F:\FinalProject\Schools\Schools.DTO\obj\Debug\net5.0\Schools.DTO.csproj.CopyComplete

@@ -29,10 +29,11 @@ namespace Schools.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Add([FromForm] ExamDto examDto)
         {
+
             if (!ModelState.IsValid)
                 return BadRequest("Invalid Exam");
             var Data = _Map.Map<Exam>(examDto);
-            if(examDto.ExamPicture is null)
+            if (examDto.ExamPicture is null)
                 return BadRequest("Adding Exam Failed");
             string ExamPdf = UploadFiles.UploadExamAsPdf(examDto.ExamPicture);
             if (string.IsNullOrEmpty(ExamPdf))
@@ -40,6 +41,7 @@ namespace Schools.Api.Controllers
             Data.ExamPdf = ExamPdf;
             await _unitOfWork.Exam.Insert(Data);
             return _unitOfWork.Complete() > 0 ? Ok("Adding Exam Successfully") : BadRequest("Adding Exam Failed");
+
         }
 
         // GET api/<Exams>/5

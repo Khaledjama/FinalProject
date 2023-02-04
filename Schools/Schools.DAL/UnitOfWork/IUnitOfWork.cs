@@ -33,6 +33,8 @@ namespace Schools.DAL.UnitOfWork
         IGenaricReprositry<ExamType> ExamType { get; }
         IGenaricReprositry<ExamAnswer> ExamAnswer { get; }
         IGenaricReprositry<ExamResult> ExamResult { get; }
+        IGenaricReprositry<SchoolYears> SchoolsYears { get; }
+        IGenaricReprositry<ClassRoom> ClassRoom { get; }
 
         int Complete();
         Task<int> CompleteAsync();

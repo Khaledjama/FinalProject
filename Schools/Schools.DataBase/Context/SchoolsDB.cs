@@ -120,9 +120,14 @@ namespace Schools.DataBase.Context
             // ExamResults
             builder.Entity<ExamResult>()
                 .HasKey(s => new { s.StudentSSN, s.SubjectId, s.ExamId });
+
             // ------------------- End ----------------------
             base.OnModelCreating(builder);
 
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
         }
         public DbSet<Test> Test { get; set; }
         public DbSet<Parent> parents { get; set; }

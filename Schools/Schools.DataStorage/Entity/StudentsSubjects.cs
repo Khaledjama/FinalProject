@@ -9,9 +9,9 @@ namespace Schools.DataStorage.Entity
     public class StudentsSubjects
     {
         public string SubjectId { get; set; }
-        public Subject Subject { get; set; }
+        public virtual Subject Subject { get; set; }
         public long StudentId { get; set; }
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
 
         public string Description { get; set; }
 

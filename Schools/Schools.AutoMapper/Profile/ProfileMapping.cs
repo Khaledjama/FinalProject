@@ -52,6 +52,19 @@ namespace Schools.AutoMapper.ProfileMapping
             CreateMap<ExamResult, ExamResultDto>();
             CreateMap<ExamResultDto, ExamResult>();
 
+            CreateMap<ClassRoom, ClassRoomDto>();
+            CreateMap<ClassRoomDto, ClassRoom>();
+
+            CreateMap<Department, DepartmentDto>();
+            CreateMap<DepartmentDto, Department>();
+
+            CreateMap<Employee, EmployeeDto>();
+            CreateMap<EmployeeDto, Employee>();
+
+            CreateMap<SchoolYears, SchoolYearsDto>();
+            CreateMap<SchoolYearsDto, SchoolYears>();
+
+
         }
     }
 }

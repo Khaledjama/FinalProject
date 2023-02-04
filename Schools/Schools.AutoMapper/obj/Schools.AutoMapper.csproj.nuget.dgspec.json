@@ -162,7 +162,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
