@@ -14,7 +14,7 @@ namespace Schools.DTO.DTO
         public string Government { get; set; }
         public string street { get; set; }
         public string ZipCode { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual StudentDto Student { get; set; }
 
     }

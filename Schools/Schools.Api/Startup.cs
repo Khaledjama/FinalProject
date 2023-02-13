@@ -41,7 +41,10 @@ namespace Schools.Api
 
             services.AddAutoMapper(typeof(ProfileMapping));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+            services.AddCors(options =>
+                options.AddPolicy("myPolicy",
+                        builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
+            );
             /// Identity UserrApplication and Authentication 
             services.AddIdentity<ApplicationUser, IdentityRole>(option =>
             {
@@ -71,6 +74,7 @@ namespace Schools.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("myPolicy");
 
             app.UseAuthorization();
             app.UseStaticFiles();

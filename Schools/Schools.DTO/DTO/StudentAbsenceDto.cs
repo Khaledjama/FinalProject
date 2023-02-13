@@ -12,7 +12,7 @@ namespace Schools.DTO.DTO
         public int? Id { get; set; }
         public DateTime Date { get; set; }
         public long? StudentSSN { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual StudentDto Student { get; set; }
 
     }

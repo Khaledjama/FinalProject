@@ -27,7 +27,7 @@ namespace Schools.Api.Controllers
             this._unitOfWork = unit;
             this._Map = map;
         }
-        [HttpPost("MaterialId:string")]
+        [HttpPost("{MaterialId}")]
         public async Task<IActionResult> RegisterMaterial(string MaterialId)
         {
             

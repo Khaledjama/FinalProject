@@ -49,7 +49,7 @@ namespace Schools.DAL.Reprositries.GenaricReprositry
             await _context.Set<T>().AddAsync(obj);
         }
 
-        public void Update(T obj)
+        public void Update( T obj)
         {
             //_context.Set<T>().Attach(obj);
             //_context.Entry<T>(obj).State = EntityState.Modified;
@@ -57,6 +57,21 @@ namespace Schools.DAL.Reprositries.GenaricReprositry
             //// _context.Entry(obj).State = EntityState.Modified;
             ////_context.Set<T>().Update(obj);
             _context.Set<T>().Update(obj);
+            //var CurrentValues =  GetById(id);
+            //this._context.Entry(CurrentValues).CurrentValues.SetValues(obj);
+
+        }
+        public void Updating(object id, T obj)
+        {
+            //_context.Set<T>().Attach(obj);
+            //_context.Entry<T>(obj).State = EntityState.Modified;
+            ////_context.Set<T>().Attach(obj);
+            //// _context.Entry(obj).State = EntityState.Modified;
+            ////_context.Set<T>().Update(obj);
+            //_context.Set<T>().Update(obj);
+            var CurrentValues =  GetById(id);
+            this._context.Entry(CurrentValues).CurrentValues.SetValues(obj);
+
         }
 
         public void Delete(object id)

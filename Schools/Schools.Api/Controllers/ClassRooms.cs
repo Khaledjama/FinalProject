@@ -67,7 +67,7 @@ namespace Schools.Api.Controllers
                 return BadRequest("Not Found This Department");
             CurrentClassRoom = _Map.Map<ClassRoomDto, ClassRoom>(classRoomDto, CurrentClassRoom);
             CurrentClassRoom.Id = id;
-            _unitOfWork.ClassRoom.Update(CurrentClassRoom);
+            _unitOfWork.ClassRoom.Updating(id,CurrentClassRoom);
             return _unitOfWork.Complete() > 0 ? Ok("Done") : BadRequest("Error in Update Department");
         }
 

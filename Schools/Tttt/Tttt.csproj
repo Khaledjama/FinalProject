@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.Toast" Version="3.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Schools.AutoMapper\Schools.AutoMapper.csproj" />
+    <ProjectReference Include="..\Schools.DataStorage\Schools.DataStorage.csproj" />
+    <ProjectReference Include="..\Schools.DTO\Schools.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -10,10 +10,10 @@ namespace Schools.DTO.DTO
     public class StudentSubjectDTO
     {
         public string SubjectId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual SubjectDto Subject { get; set; }
         public long StudentId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual StudentDto Student { get; set; }
         public string Description { get; set; }
     }

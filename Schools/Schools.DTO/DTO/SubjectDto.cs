@@ -22,13 +22,13 @@ namespace Schools.DTO.DTO
 
         [Required(ErrorMessage = "Please Added Thid Subject to Any Teacher")]
         public long TeacherId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual TeacherDto Teacher { get; set; }
 
         // RelationShip between Subject And Students
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<StudentsSubjectsDto> StudentsSubjects { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<ExamResultDto> ExamResult { get; set; }
     }
 }

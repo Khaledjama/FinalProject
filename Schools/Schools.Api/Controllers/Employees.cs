@@ -33,7 +33,7 @@ namespace Schools.Api.Controllers
         }
 
         // GET api/<Department>/5
-        [HttpGet("SSN:long")]
+        [HttpGet("{SSN}")]
         public async Task<IActionResult> Get(long? SSN)
         {
             if (SSN is null)
@@ -57,7 +57,7 @@ namespace Schools.Api.Controllers
         }
 
         // PUT api/<Department>/5
-        [HttpPut("SSN:long")]
+        [HttpPut("{SSN}")]
         public async Task<IActionResult> Update(long SSN, [FromBody] EmployeeDto employeeDto)
         {
             if (!ModelState.IsValid)
@@ -67,12 +67,12 @@ namespace Schools.Api.Controllers
                 return BadRequest("Not Found This Department");
             CurrentEmployee = _Map.Map<EmployeeDto, Employee>(employeeDto, CurrentEmployee);
             CurrentEmployee.EmployeeSSN = SSN;
-            _unitOfWork.Employee.Update(CurrentEmployee);
+            _unitOfWork.Employee.Updating(SSN, CurrentEmployee);
             return _unitOfWork.Complete() > 0 ? Ok("Done") : BadRequest("Error in Update Employee");
         }
 
         // DELETE api/<Department>/5
-        [HttpDelete("SSN:long")]
+        [HttpDelete("{SSN}")]
         public async Task<IActionResult> Delete(long SSN)
         {
             var CurrentEmployee =await _unitOfWork.Employee.GetByIdAsync(SSN);

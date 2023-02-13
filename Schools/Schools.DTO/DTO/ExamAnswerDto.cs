@@ -11,7 +11,7 @@ namespace Schools.DTO.DTO
     {
         public int? Id { get; set; }
         public string ExamAnswerType { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<ExamDto> Exam { get; set; }
 
     }

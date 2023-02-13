@@ -1,0 +1,79 @@
+﻿@page "/"
+@namespace Tttt.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tttt</title>
+    @*<base href="~/" />
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+        <link href="css/site.css" rel="stylesheet" />
+        <link href="Tttt.styles.css" rel="stylesheet" />*@
+    <link rel="icon" href="~/pluto-1.0.0/images/fevicon.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/pluto-1.0.0/css/custom.css" />
+    <link href="~/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*For Minified use :*@
+    <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" />
+    @*For Unminified use :*@
+    @*<link href=”_content/Blazored.Toast/blazored-toast.css” rel=”stylesheet” />*@
+</head>
+<body class="dashboard dashboard_1">
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="~/pluto-1.0.0/js/analyser.js"></script>
+    <script src="~/pluto-1.0.0/js/jquery.min.js"></script>
+    <script src="~/pluto-1.0.0/js/popper.min.js"></script>
+    <script src="~/pluto-1.0.0/js/bootstrap.min.js"></script>
+    <!-- wow animation -->
+    <script src="~/pluto-1.0.0/js/animate.js"></script>
+    <!-- select country -->
+    <script src="~/pluto-1.0.0/js/bootstrap-select.js"></script>
+    <!-- owl carousel -->
+    <script src="~/pluto-1.0.0/js/owl.carousel.js"></script>
+    <!-- chart js -->
+    <script src="~/pluto-1.0.0/js/Chart.min.js"></script>
+    <script src="~/pluto-1.0.0/js/Chart.bundle.min.js"></script>
+    <script src="~/pluto-1.0.0/js/utils.js"></script>
+    <script src="~/pluto-1.0.0/js/analyser.js"></script>
+    <!-- nice scrollbar -->
+    <script src="~/pluto-1.0.0/js/perfect-scrollbar.min.js"></script>
+    <script>
+        var ps = new PerfectScrollbar('#sidebar');
+    </script>
+    <!-- custom js -->
+    <script src="~/pluto-1.0.0/js/custom.js"></script>
+    <script src="~/pluto-1.0.0/js/chart_custom_style1.js"></script>
+    <script src="~/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="_framework/blazor.server.js"></script>
+    <script src="~/js/Modal.js"></script>
+</body>
+</html>

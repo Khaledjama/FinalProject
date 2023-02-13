@@ -33,7 +33,7 @@ namespace Schools.Api.Controllers
             var Data = _Map.Map<IEnumerable<Studentabsence>, IEnumerable<StudentAbsenceDto>>(CurrentStudentAbsence);
             return Ok(Data);
         }
-        [HttpGet("SSN:long")]
+        [HttpGet("{SSN}")]
         public async Task<IActionResult> GetStudentAbsence(long? SSN)
         {
             if (SSN is null)
@@ -96,7 +96,7 @@ namespace Schools.Api.Controllers
             var Data = _Map.Map<IEnumerable<Studentabsence>, IEnumerable<StudentAbsenceDto>>(StudentAbsence);
             return Ok(Data);
         }
-        [HttpGet("FirstName:string")]
+        [HttpGet("{FirstName}")]
         public async Task<IActionResult> GetStudentAbsenceByName(string FirstName, string MiddleName, string LastName)
         {
 
@@ -105,7 +105,7 @@ namespace Schools.Api.Controllers
             return Ok(Data);
         }
 
-        [HttpGet("SchoolsYearId:int")]
+        [HttpGet("{SchoolsYearId}")]
         public async Task<IActionResult> GetStudentAbsenceBySchoolsYear(int? SchoolsYearId)
         {
             if (SchoolsYearId is null)
@@ -119,7 +119,7 @@ namespace Schools.Api.Controllers
             return Ok(Data);
         }
 
-        [HttpGet("{SchoolsYearId:int}/{ClassRoomId:int}")]
+        [HttpGet("{SchoolsYearId}/{ClassRoomId}")]
         public async Task<IActionResult> GetStudentAbsenceByClassRoom(int? SchoolsYearId, int? ClassRoomId)
         {
             if (SchoolsYearId is null || ClassRoomId is null)
@@ -157,7 +157,7 @@ namespace Schools.Api.Controllers
            
         }
 
-        [HttpDelete("Id:int")]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> Delete(int? Id)
         {
             if (Id is null)

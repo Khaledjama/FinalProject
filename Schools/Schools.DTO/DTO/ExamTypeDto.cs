@@ -13,7 +13,7 @@ namespace Schools.DTO.DTO
         public string ExamName { get; set; }
         public string Description { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<ExamDto> Exam { get; set; }
 
     }

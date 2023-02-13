@@ -33,7 +33,7 @@ namespace Schools.Api.Controllers
         }
 
         // GET api/<StudentAdresses>/5
-        [HttpGet("SSN:long")]
+        [HttpGet("{SSN}")]
         public async Task<IActionResult> Get(long? SSN)
         {
             if (SSN is null)
@@ -84,7 +84,7 @@ namespace Schools.Api.Controllers
 
 
         // PUT api/<StudentAdresses>/5
-        [HttpPut("{SSN:long}")]
+        [HttpPut("{SSN}")]
         public async Task<IActionResult> Update(long SSN, TeacherAdressDto teacherAdressDto)
         {
             if (!ModelState.IsValid)
@@ -96,11 +96,12 @@ namespace Schools.Api.Controllers
             }
             TeacherAdress = _Map.Map<TeacherAdressDto, TeacherAdress>(teacherAdressDto, TeacherAdress);
             TeacherAdress.TeacherSSN = SSN;
+            _unitOfWork.TeacherAdress.Updating(SSN, TeacherAdress);
             return _unitOfWork.Complete() > 0 ? Ok("Update Successfully") : BadRequest("Update Failed ");
         }
 
         // DELETE api/<StudentAdresses>/5
-        [HttpDelete("SSN:long")]
+        [HttpDelete("{SSN}")]
         public async Task<IActionResult> Delete(long? SSN)
         {
             if (SSN is null)

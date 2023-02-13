@@ -32,7 +32,7 @@ namespace Schools.Api.Controllers
             var Data = _Map.Map<IEnumerable<ExamType>, IEnumerable<ExamTypeDto>>(ExamTypes);
             return Ok(Data);
         }
-        [HttpPost("Id:int")]
+        [HttpPost("{Id}")]
         public async Task<IActionResult> Get(int Id)
         {
             var CurrentExamType = await _unitOfWork.ExamType.GetByIdAsync(Id);
@@ -77,7 +77,7 @@ namespace Schools.Api.Controllers
             }
         }
 
-        [HttpPut("Id:int")]
+        [HttpPut("{Id}")]
         public async Task<IActionResult> Update(int Id, [FromForm] ExamTypeDto examTypeDto)
         {
             if (!ModelState.IsValid)
@@ -89,10 +89,10 @@ namespace Schools.Api.Controllers
                 return BadRequest("This Exam Answer are Not Found");
             CurrentExamType = _Map.Map<ExamTypeDto, ExamType>(examTypeDto, CurrentExamType);
             CurrentExamType.Id = Id;
-            _unitOfWork.ExamType.Update(CurrentExamType);
+            _unitOfWork.ExamType.Updating(Id,CurrentExamType);
             return _unitOfWork.Complete() > 0 ? Ok("Update Successfully") : BadRequest("Update Failed !!");
         }
-        [HttpDelete("Id:int")]
+        [HttpDelete("{Id}")]
         public IActionResult Delete(int? Id)
         {
             if (Id is null)

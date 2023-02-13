@@ -12,15 +12,15 @@ namespace Schools.DTO.DTO
     {
         [Required(ErrorMessage ="You Shoud Select Student")]
         public long StudentSSN { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual StudentDto Student { get; set; }
         [Required(ErrorMessage = "You Shoud Select Subject")]
         public string SubjectId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual SubjectDto Subject { get; set; }
         [Required(ErrorMessage = "You Shoud Select Exam")]
         public int ExamId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ExamDto Exam { get; set; }
         [Required(ErrorMessage = "You Shoud Put Exam Degree")]
         public double ExamDegree { get; set; }

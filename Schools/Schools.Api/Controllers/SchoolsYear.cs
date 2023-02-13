@@ -66,7 +66,7 @@ namespace Schools.Api.Controllers
                 return BadRequest("Not Found This Department");
             CurrentSchoolYear = _Map.Map<SchoolYearsDto, SchoolYears>(schoolYearsDto, CurrentSchoolYear);
             CurrentSchoolYear.Id = id;
-            _unitOfWork.SchoolsYears.Update(CurrentSchoolYear);
+            _unitOfWork.SchoolsYears.Updating(id,CurrentSchoolYear);
             return _unitOfWork.Complete() > 0 ? Ok("Done") : BadRequest("Error in Update Department");
         }
 

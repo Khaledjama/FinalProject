@@ -15,7 +15,8 @@ namespace Schools.DAL.Interfacies.GenaricInterface
         T GetById(object id);
         Task<T> GetByIdAsync(object id);
         Task Insert(T obj);
-        void Update(T obj);
+        void Update( T obj);
+        void Updating(object id, T obj);
         void Delete(object id);
         void Save();
         void SaveAsync();

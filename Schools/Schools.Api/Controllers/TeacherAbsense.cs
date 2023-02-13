@@ -47,7 +47,7 @@ namespace Schools.Api.Controllers
             return BadRequest("Adding Absence Failed !");
         }
 
-        [HttpDelete("Id:int")]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> Delete(int? Id)
         {
             if (Id is null)

@@ -1,0 +1,344 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\FinalProject\\Schools\\Tttt\\Tttt.csproj": {}
+  },
+  "projects": {
+    "F:\\FinalProject\\Schools\\Schools.AutoMapper\\Schools.AutoMapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FinalProject\\Schools\\Schools.AutoMapper\\Schools.AutoMapper.csproj",
+        "projectName": "Schools.AutoMapper",
+        "projectPath": "F:\\FinalProject\\Schools\\Schools.AutoMapper\\Schools.AutoMapper.csproj",
+        "packagesPath": "C:\\Users\\jkhal\\.nuget\\packages\\",
+        "outputPath": "F:\\FinalProject\\Schools\\Schools.AutoMapper\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jkhal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj"
+              },
+              "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj",
+        "projectName": "Schools.DataStorage",
+        "projectPath": "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj",
+        "packagesPath": "C:\\Users\\jkhal\\.nuget\\packages\\",
+        "outputPath": "F:\\FinalProject\\Schools\\Schools.DataStorage\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jkhal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\FinalProject\\Schools\\Schools.Service\\Schools.Service.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.Service\\Schools.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj",
+        "projectName": "Schools.DTO",
+        "projectPath": "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj",
+        "packagesPath": "C:\\Users\\jkhal\\.nuget\\packages\\",
+        "outputPath": "F:\\FinalProject\\Schools\\Schools.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jkhal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\FinalProject\\Schools\\Schools.Service\\Schools.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FinalProject\\Schools\\Schools.Service\\Schools.Service.csproj",
+        "projectName": "Schools.Service",
+        "projectPath": "F:\\FinalProject\\Schools\\Schools.Service\\Schools.Service.csproj",
+        "packagesPath": "C:\\Users\\jkhal\\.nuget\\packages\\",
+        "outputPath": "F:\\FinalProject\\Schools\\Schools.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jkhal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\FinalProject\\Schools\\Tttt\\Tttt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FinalProject\\Schools\\Tttt\\Tttt.csproj",
+        "projectName": "Tttt",
+        "projectPath": "F:\\FinalProject\\Schools\\Tttt\\Tttt.csproj",
+        "packagesPath": "C:\\Users\\jkhal\\.nuget\\packages\\",
+        "outputPath": "F:\\FinalProject\\Schools\\Tttt\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jkhal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\FinalProject\\Schools\\Schools.AutoMapper\\Schools.AutoMapper.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.AutoMapper\\Schools.AutoMapper.csproj"
+              },
+              "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.DataStorage\\Schools.DataStorage.csproj"
+              },
+              "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj": {
+                "projectPath": "F:\\FinalProject\\Schools\\Schools.DTO\\Schools.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Blazored.Toast": {
+              "target": "Package",
+              "version": "[3.2.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

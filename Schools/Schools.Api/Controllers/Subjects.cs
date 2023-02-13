@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Schools.DAL.UnitOfWork;
+using Schools.DataBase.Context;
 using Schools.DataStorage.Entity;
 using Schools.DTO.DTO;
 using System;
@@ -18,10 +20,12 @@ namespace Schools.Api.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _Map;
-        public Subjects(IUnitOfWork unit,IMapper map)
+        private readonly SchoolsDB _Db;
+        public Subjects(IUnitOfWork unit,IMapper map, SchoolsDB Db)
         {
             this._unitOfWork = unit;
             this._Map = map;
+            this._Db = Db;
         }
         // GET: api/<Subject>
         [HttpGet]
@@ -33,7 +37,7 @@ namespace Schools.Api.Controllers
         }
 
         // GET api/<Subject>/5
-        [HttpGet("CodedId:string")]
+        [HttpGet("{CodedId}")]
         public async Task<IActionResult> Get(string CodedId)
         {
             bool StatuesCodedId = string.IsNullOrEmpty(CodedId);
@@ -45,7 +49,7 @@ namespace Schools.Api.Controllers
             var Data = _Map.Map<SubjectDto>(CurrentSubject);
             return Ok(Data);
         }
-        [HttpPut("CodedId:string")]
+        [HttpPut("{CodedId}")]
         public async Task<IActionResult> Update(string CodedId, SubjectDto subjectDto)
         {
             bool StatuesCodedId = string.IsNullOrEmpty(CodedId);
@@ -54,12 +58,28 @@ namespace Schools.Api.Controllers
             var CurrentSubject = await _unitOfWork.Subject.GetByIdAsync(CodedId);
             if (CurrentSubject is null)
                 return BadRequest("This Subject are Not Found");
-            CurrentSubject = _Map.Map<SubjectDto, Subject>(subjectDto, CurrentSubject);
+            CurrentSubject = _Map.Map<Subject>(subjectDto);
             CurrentSubject.CodeId = CodedId;
-            _unitOfWork.Subject.Update(CurrentSubject);
+            _unitOfWork.Subject.Updating(CodedId, CurrentSubject);
             return _unitOfWork.Complete() > 0 ? Ok("Update Successfully") : BadRequest("Update Failed !!");
                 
         }
+        [HttpPut("{CodedId}")]
+        public async Task<IActionResult> Updating(string CodedId, SubjectDto subjectDto)
+        {
+            bool StatuesCodedId = string.IsNullOrEmpty(CodedId);
+            if (StatuesCodedId)
+                return BadRequest("Invalid Coded Id");
+            var CurrentSubject = await _unitOfWork.Subject.GetByIdAsync(CodedId);
+            if (CurrentSubject is null)
+                return BadRequest("This Subject are Not Found");
+            CurrentSubject = _Map.Map<Subject>(subjectDto);
+            CurrentSubject.CodeId = CodedId;
+            _unitOfWork.Subject.Updating(CodedId, CurrentSubject);
+            return _unitOfWork.Complete() > 0 ? Ok("Update Successfully") : BadRequest("Update Failed !!");
+                
+        }
+
         [HttpPost]
         public async Task<IActionResult> Add(SubjectDto subjectDto )
         {
@@ -92,7 +112,7 @@ namespace Schools.Api.Controllers
         }
 
         // DELETE api/<Subject>/5
-        [HttpDelete("CodedId:string")]
+        [HttpDelete("{CodedId}")]
         public async Task<IActionResult> Delete(string CodedId)
         {
             bool StatuesCodedId = string.IsNullOrEmpty(CodedId);

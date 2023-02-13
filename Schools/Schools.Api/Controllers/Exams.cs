@@ -52,7 +52,7 @@ namespace Schools.Api.Controllers
             var Data = _Map.Map<IEnumerable<Exam>, IEnumerable<ExamDto>>(Exams);
             return Ok(Data);
         }
-        [HttpPost("Id:int")]
+        [HttpPost("{Id}")]
         public async Task<IActionResult> Get(int Id)
         {
             var CurrentExamAnswer = await _unitOfWork.Exam.GetByIdAsync(Id);
@@ -66,7 +66,7 @@ namespace Schools.Api.Controllers
                 return BadRequest("This Exam don't Exist ");
         }
         
-        [HttpPut("Id:int")]
+        [HttpPut("{Id}")]
         public async Task<IActionResult> Update(int Id, [FromForm] ExamDto examDto)
         {
             if (!ModelState.IsValid)
@@ -79,10 +79,10 @@ namespace Schools.Api.Controllers
             CurrentExam = _Map.Map<ExamDto, Exam>(examDto, CurrentExam);
             CurrentExam.ExamPdf = string.IsNullOrEmpty(CurrentExam.ExamPdf) ? CurrentExam.ExamPdf : UploadFiles.UploadExamAsPdf(examDto.ExamPicture);
             CurrentExam.Id = Id;
-            _unitOfWork.Exam.Update(CurrentExam);
+            _unitOfWork.Exam.Updating(Id,CurrentExam);
             return _unitOfWork.Complete() > 0 ? Ok("Update Successfully") : BadRequest("Update Failed !!");
         }
-        [HttpDelete("Id:int")]
+        [HttpDelete("{Id}")]
         public IActionResult Delete(int? Id)
         {
             if (Id is null)

@@ -53,7 +53,7 @@ namespace Schools.Api.Controllers
             return Ok("SignOut Dine");
         }
 
-        [HttpPost("SSN:long")]
+        [HttpPost("{SSN}")]
         public async Task<IActionResult> Register(long SSN, string Role, UserRegistrationDto userRegistrationDto)
         {
             if (!ModelState.IsValid)
@@ -97,7 +97,7 @@ namespace Schools.Api.Controllers
                 }
             }
         }
-        [HttpPost("ParentSSN:long")]
+        [HttpPost("{ParentSSN}")]
         public async Task<IActionResult> RegisterAsParent(long StudentSSN , long ParentSSN, UserRegistrationDto userRegistrationDto)
         {
             if (!ModelState.IsValid)

@@ -37,7 +37,7 @@ namespace Schools.Api.Controllers
             var Data = _Map.Map<IEnumerable<ExamResult>, IEnumerable<ExamResultDto>>(ExamResults);
             return Ok(Data);
         }
-        [HttpGet("{StudentSSN:long}/{SubjectId}/{ExamId:int}")]
+        [HttpGet("{StudentSSN}/{SubjectId}/{ExamId}")]
         public IActionResult Get(long? StudentSSN ,string SubjectId ,int? ExamId)
         {
             
@@ -77,14 +77,14 @@ namespace Schools.Api.Controllers
         }
 
         // DELETE api/<ExamResults>/5
-        [HttpDelete("{SubjectId}/{ExamId:int}")]
+        [HttpDelete("{SubjectId}/{ExamId}")]
         public IActionResult Delete( string SubjectId, int? ExamId, long? StudentSSN)
         {
             if (!_unitOfWork.ExamResultRepo.DeleteExamResult(StudentSSN, SubjectId, ExamId))
                 return BadRequest("Error When Delete Exam Result");
             return Ok("Deleted Exam Result Successfully");
         }
-        [HttpGet("{ExamTypeId:int}")]
+        [HttpGet("{ExamTypeId}")]
         public IActionResult GetResultForStudent(int ExamTypeId)
         {
             var CurrentStudentUserId = _userManager.GetUserId(User);

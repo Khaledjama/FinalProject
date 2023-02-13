@@ -32,13 +32,13 @@ namespace Schools.DTO.DTO
 
 
         // RelationShip between Teacher And Subject
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<SubjectDto> Subject { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual TeacherAdressDto TeacherAdress { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ApplicationUser ApplicationUser { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<TeacherAbsenceDto> Teacherabsences { get; set; }
     }
 }

@@ -35,11 +35,11 @@ namespace Schools.DTO.DTO
 
 
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ExamTypeDto ExamType { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual SchoolYearsDto SchoolYears { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ExamAnswerDto ExamAnswer { get; set; }
         
 

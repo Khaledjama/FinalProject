@@ -33,7 +33,7 @@ namespace Schools.Api.Controllers
             return Ok(Data);
         }
 
-        [HttpPost("SSN:long")]
+        [HttpPost("{SSN}")]
         public async Task<IActionResult> Get(long SSN)
         {
             var CurrentTeacher = await _unitOfWork.Teacher.GetByIdAsync(SSN);
@@ -80,7 +80,7 @@ namespace Schools.Api.Controllers
         }
        
       
-        [HttpPut("SSN:long")]
+        [HttpPut("{SSN}")]
         public IActionResult Update(long SSN, [FromForm] TeacherDto teacherDto)
         {
             if (!ModelState.IsValid)
@@ -97,7 +97,7 @@ namespace Schools.Api.Controllers
                 CurrentTeacher = _Map.Map<TeacherDto, Teacher>(teacherDto, CurrentTeacher);
                 CurrentTeacher.TeacherSSN = SSN;
                 CurrentTeacher.Image = teacherDto.Image != null ? UploadFiles.UploadImage(teacherDto.Picture) : CurrentTeacher.Image;
-                _unitOfWork.Teacher.Update(CurrentTeacher);
+                _unitOfWork.Teacher.Updating(SSN,CurrentTeacher);
                 if (_unitOfWork.Complete() > 0)
                 {
                     return Ok("Update student Successfully");
@@ -110,7 +110,7 @@ namespace Schools.Api.Controllers
 
         }
 
-        [HttpDelete("{SSN:long}")]
+        [HttpDelete("{SSN}")]
         public IActionResult Delete(long? SSN)
         {
             if (SSN is null)

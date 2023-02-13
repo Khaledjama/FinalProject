@@ -27,12 +27,12 @@ namespace Schools.DTO.DTO
         public string Phone { get; set; }
         public IFormFile Picture { get; set; }
         public string Image { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<StudentDto> Students { get; set; }
 
 
         // RelationShip between Parent And ApplicationUser
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

@@ -38,33 +38,33 @@ namespace Schools.DTO.DTO
 
 
         // RelationShip between Teacher And Subject
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual StudentAdressDto StudentAdress { get; set; }
 
         // RelationShip between Teacher And ApplicationUser
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         // RelationShip between Student And Subjects
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<StudentsSubjectsDto> StudentsSubjects { get; set; }
 
         // RelationShip between Student And Parents
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ParentDto Parent { get; set; }
 
 
         // Relationship between Student And StudentAbsense
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<StudentAbsenceDto> Studentabsences { get; set; }
 
         // Relationship between Student And SchoolYears
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual SchoolYearsDto SchoolYears { get; set; }
         // Relationship between Student And ClassRoom
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ClassRoomDto ClassRoom { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<ExamResultDto> ExamResult { get; set; }
 
     }
